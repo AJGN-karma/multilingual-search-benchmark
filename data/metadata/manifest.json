@@ -1,0 +1,66 @@
+{
+  "dataset_name": "Wikipedia Multilingual Title Corpus",
+  "created_utc": "2026-10-12T09:02:21.967122+00:00",
+  "python_version": "3.13.16",
+  "source_snapshot": "2026-09-01",
+  "source_type": "Wikipedia all-titles-in-namespace-0 dumps",
+  "records": [
+    {
+      "filename": "tulu_titles.csv",
+      "wiki_id": "tcywiki",
+      "language": "Tulu",
+      "row_count": 4536,
+      "file_size_bytes": 577485,
+      "sha256": "4d32349b83fa0d5b710b3437f2122c79b12101186575f70f93d1ef8c1d6d9211",
+      "columns": [
+        "wiki_id",
+        "language",
+        "title_source",
+        "title_display",
+        "title_nfc",
+        "codepoint_length",
+        "utf8_bytes"
+      ],
+      "encoding": "UTF-8",
+      "unicode_normalization_field": "title_nfc"
+    },
+    {
+      "filename": "kannada_titles.csv",
+      "wiki_id": "knwiki",
+      "language": "Kannada",
+      "row_count": 47392,
+      "file_size_bytes": 6989080,
+      "sha256": "a833a85a18db715aea978648e39e1173456ce2952d51dff101f01f2efad21a6b",
+      "columns": [
+        "wiki_id",
+        "language",
+        "title_source",
+        "title_display",
+        "title_nfc",
+        "codepoint_length",
+        "utf8_bytes"
+      ],
+      "encoding": "UTF-8",
+      "unicode_normalization_field": "title_nfc"
+    },
+    {
+      "filename": "english_titles.csv",
+      "wiki_id": "enwiki",
+      "language": "English",
+      "row_count": 19264252,
+      "file_size_bytes": 1698125015,
+      "sha256": "a48969eca2f8bc62dd4e872ed6c524b62187efbed4632b3872955f9a0f347a95",
+      "columns": [
+        "wiki_id",
+        "language",
+        "title_source",
+        "title_display",
+        "title_nfc",
+        "codepoint_length",
+        "utf8_bytes"
+      ],
+      "encoding": "UTF-8",
+      "unicode_normalization_field": "title_nfc"
+    }
+  ]
+}

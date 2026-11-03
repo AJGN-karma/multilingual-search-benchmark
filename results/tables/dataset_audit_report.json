@@ -1,0 +1,61 @@
+{
+  "generated_utc": "2026-11-03T09:48:11.096952+00:00",
+  "verification_method": "streaming_csv_audit",
+  "duplicate_detection_performed": false,
+  "datasets": [
+    {
+      "dataset": "tulu",
+      "filename": "tulu_titles.csv",
+      "language": "Tulu",
+      "status": "PASS",
+      "expected_rows": 4536,
+      "actual_rows": 4536,
+      "expected_file_size_bytes": 577485,
+      "actual_file_size_bytes": 577485,
+      "row_count_match": true,
+      "schema_match": true,
+      "sha256_checked": true,
+      "sha256_match": true,
+      "duplicates_checked": false,
+      "issue_counts": {},
+      "warnings": [],
+      "error_samples": []
+    },
+    {
+      "dataset": "kannada",
+      "filename": "kannada_titles.csv",
+      "language": "Kannada",
+      "status": "PASS",
+      "expected_rows": 47392,
+      "actual_rows": 47392,
+      "expected_file_size_bytes": 6989080,
+      "actual_file_size_bytes": 6989080,
+      "row_count_match": true,
+      "schema_match": true,
+      "sha256_checked": true,
+      "sha256_match": true,
+      "duplicates_checked": false,
+      "issue_counts": {},
+      "warnings": [],
+      "error_samples": []
+    },
+    {
+      "dataset": "english",
+      "filename": "english_titles.csv",
+      "language": "English",
+      "status": "PASS",
+      "expected_rows": 19264252,
+      "actual_rows": 19264252,
+      "expected_file_size_bytes": 1698125015,
+      "actual_file_size_bytes": 1698125015,
+      "row_count_match": true,
+      "schema_match": true,
+      "sha256_checked": true,
+      "sha256_match": true,
+      "duplicates_checked": false,
+      "issue_counts": {},
+      "warnings": [],
+      "error_samples": []
+    }
+  ]
+}
