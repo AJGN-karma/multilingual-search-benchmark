@@ -1,0 +1,133 @@
+corpus_id,language,feature,value,unit,note
+tulu,Tulu,distinct_unicode_codepoints,108,distinct code points,
+tulu,Tulu,ascii_only_title_count,1,titles,
+tulu,Tulu,non_ascii_title_count,4535,titles,
+tulu,Tulu,titles_with_underscores,2870,titles,
+tulu,Tulu,underscore_occurrences,4024,characters,
+tulu,Tulu,unique_codepoints_category_Cf,2,distinct code points,Unicode general category
+tulu,Tulu,unique_codepoints_category_Ll,5,distinct code points,Unicode general category
+tulu,Tulu,unique_codepoints_category_Lo,48,distinct code points,Unicode general category
+tulu,Tulu,unique_codepoints_category_Lu,4,distinct code points,Unicode general category
+tulu,Tulu,unique_codepoints_category_Mc,11,distinct code points,Unicode general category
+tulu,Tulu,unique_codepoints_category_Mn,5,distinct code points,Unicode general category
+tulu,Tulu,unique_codepoints_category_Nd,18,distinct code points,Unicode general category
+tulu,Tulu,unique_codepoints_category_Pc,1,distinct code points,Unicode general category
+tulu,Tulu,unique_codepoints_category_Pd,2,distinct code points,Unicode general category
+tulu,Tulu,unique_codepoints_category_Pe,1,distinct code points,Unicode general category
+tulu,Tulu,unique_codepoints_category_Pf,1,distinct code points,Unicode general category
+tulu,Tulu,unique_codepoints_category_Po,8,distinct code points,Unicode general category
+tulu,Tulu,unique_codepoints_category_Ps,1,distinct code points,Unicode general category
+tulu,Tulu,unique_codepoints_category_Sc,1,distinct code points,Unicode general category
+tulu,Tulu,unique_codepoints_name_prefix_KANNADA,74,distinct code points,Prefix of Unicode character name; not a language classifier
+tulu,Tulu,unique_codepoints_name_prefix_LATIN,9,distinct code points,Prefix of Unicode character name; not a language classifier
+tulu,Tulu,unique_codepoints_name_prefix_DIGIT,8,distinct code points,Prefix of Unicode character name; not a language classifier
+tulu,Tulu,unique_codepoints_name_prefix_ZERO,2,distinct code points,Prefix of Unicode character name; not a language classifier
+tulu,Tulu,unique_codepoints_name_prefix_RIGHT,2,distinct code points,Prefix of Unicode character name; not a language classifier
+tulu,Tulu,unique_codepoints_name_prefix_AMPERSAND,1,distinct code points,Prefix of Unicode character name; not a language classifier
+tulu,Tulu,unique_codepoints_name_prefix_COLON,1,distinct code points,Prefix of Unicode character name; not a language classifier
+tulu,Tulu,unique_codepoints_name_prefix_EN,1,distinct code points,Prefix of Unicode character name; not a language classifier
+tulu,Tulu,unique_codepoints_name_prefix_COMMA,1,distinct code points,Prefix of Unicode character name; not a language classifier
+tulu,Tulu,unique_codepoints_name_prefix_LEFT,1,distinct code points,Prefix of Unicode character name; not a language classifier
+tulu,Tulu,unique_codepoints_name_prefix_APOSTROPHE,1,distinct code points,Prefix of Unicode character name; not a language classifier
+tulu,Tulu,unique_codepoints_name_prefix_FULL,1,distinct code points,Prefix of Unicode character name; not a language classifier
+tulu,Tulu,unique_codepoints_name_prefix_QUESTION,1,distinct code points,Prefix of Unicode character name; not a language classifier
+tulu,Tulu,unique_codepoints_name_prefix_HYPHEN-MINUS,1,distinct code points,Prefix of Unicode character name; not a language classifier
+tulu,Tulu,unique_codepoints_name_prefix_INDIAN,1,distinct code points,Prefix of Unicode character name; not a language classifier
+tulu,Tulu,unique_codepoints_name_prefix_LOW,1,distinct code points,Prefix of Unicode character name; not a language classifier
+tulu,Tulu,unique_codepoints_name_prefix_SOLIDUS,1,distinct code points,Prefix of Unicode character name; not a language classifier
+tulu,Tulu,unique_codepoints_name_prefix_QUOTATION,1,distinct code points,Prefix of Unicode character name; not a language classifier
+kannada,Kannada,distinct_unicode_codepoints,178,distinct code points,
+kannada,Kannada,ascii_only_title_count,40,titles,
+kannada,Kannada,non_ascii_title_count,47352,titles,
+kannada,Kannada,titles_with_underscores,30415,titles,
+kannada,Kannada,underscore_occurrences,48687,characters,
+kannada,Kannada,unique_codepoints_category_Cf,4,distinct code points,Unicode general category
+kannada,Kannada,unique_codepoints_category_Cn,1,distinct code points,Unicode general category
+kannada,Kannada,unique_codepoints_category_Ll,24,distinct code points,Unicode general category
+kannada,Kannada,unique_codepoints_category_Lm,1,distinct code points,Unicode general category
+kannada,Kannada,unique_codepoints_category_Lo,55,distinct code points,Unicode general category
+kannada,Kannada,unique_codepoints_category_Lu,26,distinct code points,Unicode general category
+kannada,Kannada,unique_codepoints_category_Mc,13,distinct code points,Unicode general category
+kannada,Kannada,unique_codepoints_category_Mn,7,distinct code points,Unicode general category
+kannada,Kannada,unique_codepoints_category_Nd,20,distinct code points,Unicode general category
+kannada,Kannada,unique_codepoints_category_Pc,1,distinct code points,Unicode general category
+kannada,Kannada,unique_codepoints_category_Pd,2,distinct code points,Unicode general category
+kannada,Kannada,unique_codepoints_category_Pe,1,distinct code points,Unicode general category
+kannada,Kannada,unique_codepoints_category_Pf,1,distinct code points,Unicode general category
+kannada,Kannada,unique_codepoints_category_Pi,1,distinct code points,Unicode general category
+kannada,Kannada,unique_codepoints_category_Po,13,distinct code points,Unicode general category
+kannada,Kannada,unique_codepoints_category_Ps,1,distinct code points,Unicode general category
+kannada,Kannada,unique_codepoints_category_Sc,1,distinct code points,Unicode general category
+kannada,Kannada,unique_codepoints_category_Sk,2,distinct code points,Unicode general category
+kannada,Kannada,unique_codepoints_category_Sm,4,distinct code points,Unicode general category
+kannada,Kannada,unique_codepoints_name_prefix_KANNADA,78,distinct code points,Prefix of Unicode character name; not a language classifier
+kannada,Kannada,unique_codepoints_name_prefix_LATIN,49,distinct code points,Prefix of Unicode character name; not a language classifier
+kannada,Kannada,unique_codepoints_name_prefix_DIGIT,10,distinct code points,Prefix of Unicode character name; not a language classifier
+kannada,Kannada,unique_codepoints_name_prefix_TELUGU,6,distinct code points,Prefix of Unicode character name; not a language classifier
+kannada,Kannada,unique_codepoints_name_prefix_ZERO,3,distinct code points,Prefix of Unicode character name; not a language classifier
+kannada,Kannada,unique_codepoints_name_prefix_LEFT,2,distinct code points,Prefix of Unicode character name; not a language classifier
+kannada,Kannada,unique_codepoints_name_prefix_RIGHT,2,distinct code points,Prefix of Unicode character name; not a language classifier
+kannada,Kannada,unique_codepoints_name_prefix_EXCLAMATION,1,distinct code points,Prefix of Unicode character name; not a language classifier
+kannada,Kannada,unique_codepoints_name_prefix_AMPERSAND,1,distinct code points,Prefix of Unicode character name; not a language classifier
+kannada,Kannada,unique_codepoints_name_prefix_COLON,1,distinct code points,Prefix of Unicode character name; not a language classifier
+kannada,Kannada,unique_codepoints_name_prefix_PLUS,1,distinct code points,Prefix of Unicode character name; not a language classifier
+kannada,Kannada,unique_codepoints_name_prefix_EN,1,distinct code points,Prefix of Unicode character name; not a language classifier
+kannada,Kannada,unique_codepoints_name_prefix_COMMA,1,distinct code points,Prefix of Unicode character name; not a language classifier
+kannada,Kannada,unique_codepoints_name_prefix_SEMICOLON,1,distinct code points,Prefix of Unicode character name; not a language classifier
+kannada,Kannada,unique_codepoints_name_prefix_HORIZONTAL,1,distinct code points,Prefix of Unicode character name; not a language classifier
+kannada,Kannada,unique_codepoints_name_prefix_SOFT,1,distinct code points,Prefix of Unicode character name; not a language classifier
+kannada,Kannada,unique_codepoints_name_prefix_APOSTROPHE,1,distinct code points,Prefix of Unicode character name; not a language classifier
+kannada,Kannada,unique_codepoints_name_prefix_EQUALS,1,distinct code points,Prefix of Unicode character name; not a language classifier
+kannada,Kannada,unique_codepoints_name_prefix_FULL,1,distinct code points,Prefix of Unicode character name; not a language classifier
+kannada,Kannada,unique_codepoints_name_prefix_REVERSE,1,distinct code points,Prefix of Unicode character name; not a language classifier
+english,English,distinct_unicode_codepoints,37331,distinct code points,
+english,English,ascii_only_title_count,17713614,titles,
+english,English,non_ascii_title_count,1550638,titles,
+english,English,titles_with_underscores,16926181,titles,
+english,English,underscore_occurrences,38865618,characters,
+english,English,unique_codepoints_category_Cc,32,distinct code points,Unicode general category
+english,English,unique_codepoints_category_Cf,149,distinct code points,Unicode general category
+english,English,unique_codepoints_category_Cn,335,distinct code points,Unicode general category
+english,English,unique_codepoints_category_Co,6398,distinct code points,Unicode general category
+english,English,unique_codepoints_category_Ll,959,distinct code points,Unicode general category
+english,English,unique_codepoints_category_Lm,321,distinct code points,Unicode general category
+english,English,unique_codepoints_category_Lo,19357,distinct code points,Unicode general category
+english,English,unique_codepoints_category_Lt,31,distinct code points,Unicode general category
+english,English,unique_codepoints_category_Lu,1342,distinct code points,Unicode general category
+english,English,unique_codepoints_category_Mc,294,distinct code points,Unicode general category
+english,English,unique_codepoints_category_Me,8,distinct code points,Unicode general category
+english,English,unique_codepoints_category_Mn,1061,distinct code points,Unicode general category
+english,English,unique_codepoints_category_Nd,404,distinct code points,Unicode general category
+english,English,unique_codepoints_category_Nl,83,distinct code points,Unicode general category
+english,English,unique_codepoints_category_No,417,distinct code points,Unicode general category
+english,English,unique_codepoints_category_Pc,10,distinct code points,Unicode general category
+english,English,unique_codepoints_category_Pd,23,distinct code points,Unicode general category
+english,English,unique_codepoints_category_Pe,62,distinct code points,Unicode general category
+english,English,unique_codepoints_category_Pf,4,distinct code points,Unicode general category
+english,English,unique_codepoints_category_Pi,6,distinct code points,Unicode general category
+english,English,unique_codepoints_category_Po,371,distinct code points,Unicode general category
+english,English,unique_codepoints_category_Ps,65,distinct code points,Unicode general category
+english,English,unique_codepoints_category_Sc,53,distinct code points,Unicode general category
+english,English,unique_codepoints_category_Sk,102,distinct code points,Unicode general category
+english,English,unique_codepoints_category_Sm,549,distinct code points,Unicode general category
+english,English,unique_codepoints_category_So,4895,distinct code points,Unicode general category
+english,English,unique_codepoints_name_prefix_HANGUL,7508,distinct code points,Prefix of Unicode character name; not a language classifier
+english,English,unique_codepoints_name_prefix_UNNAMED,6765,distinct code points,Prefix of Unicode character name; not a language classifier
+english,English,unique_codepoints_name_prefix_CJK,4919,distinct code points,Prefix of Unicode character name; not a language classifier
+english,English,unique_codepoints_name_prefix_LATIN,1048,distinct code points,Prefix of Unicode character name; not a language classifier
+english,English,unique_codepoints_name_prefix_BAMUM,657,distinct code points,Prefix of Unicode character name; not a language classifier
+english,English,unique_codepoints_name_prefix_CANADIAN,656,distinct code points,Prefix of Unicode character name; not a language classifier
+english,English,unique_codepoints_name_prefix_ARABIC,531,distinct code points,Prefix of Unicode character name; not a language classifier
+english,English,unique_codepoints_name_prefix_ANATOLIAN,370,distinct code points,Prefix of Unicode character name; not a language classifier
+english,English,unique_codepoints_name_prefix_GREEK,345,distinct code points,Prefix of Unicode character name; not a language classifier
+english,English,unique_codepoints_name_prefix_ETHIOPIC,339,distinct code points,Prefix of Unicode character name; not a language classifier
+english,English,unique_codepoints_name_prefix_VAI,300,distinct code points,Prefix of Unicode character name; not a language classifier
+english,English,unique_codepoints_name_prefix_MODIFIER,291,distinct code points,Prefix of Unicode character name; not a language classifier
+english,English,unique_codepoints_name_prefix_CYRILLIC,281,distinct code points,Prefix of Unicode character name; not a language classifier
+english,English,unique_codepoints_name_prefix_EGYPTIAN,269,distinct code points,Prefix of Unicode character name; not a language classifier
+english,English,unique_codepoints_name_prefix_OLD,259,distinct code points,Prefix of Unicode character name; not a language classifier
+english,English,unique_codepoints_name_prefix_BRAILLE,256,distinct code points,Prefix of Unicode character name; not a language classifier
+english,English,unique_codepoints_name_prefix_VARIATION,256,distinct code points,Prefix of Unicode character name; not a language classifier
+english,English,unique_codepoints_name_prefix_BYZANTINE,246,distinct code points,Prefix of Unicode character name; not a language classifier
+english,English,unique_codepoints_name_prefix_SQUARE,228,distinct code points,Prefix of Unicode character name; not a language classifier
+english,English,unique_codepoints_name_prefix_KANGXI,214,distinct code points,Prefix of Unicode character name; not a language classifier
