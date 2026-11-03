@@ -1,0 +1,53 @@
+{
+  "generated_utc": "2026-11-03T10:41:18.657294+00:00",
+  "duplicate_policy": "Exact case-sensitive title_nfc equality after Unicode NFC normalization",
+  "method": "Disk-backed SQLite aggregation",
+  "datasets_audited": 3,
+  "reports": [
+    {
+      "corpus_id": "tulu",
+      "language": "Tulu",
+      "source_file": "tulu_titles.csv",
+      "total_records": 4536,
+      "unique_nfc_titles": 4536,
+      "duplicate_occurrences": 0,
+      "distinct_duplicate_titles": 0,
+      "maximum_occurrences_of_one_title": 1,
+      "manifest_expected_rows": 4536,
+      "row_count_match": true,
+      "duplicate_policy": "Exact case-sensitive equality of title_nfc using SQLite BINARY collation",
+      "status": "PASS",
+      "processing_seconds": 0.05
+    },
+    {
+      "corpus_id": "kannada",
+      "language": "Kannada",
+      "source_file": "kannada_titles.csv",
+      "total_records": 47392,
+      "unique_nfc_titles": 47392,
+      "duplicate_occurrences": 0,
+      "distinct_duplicate_titles": 0,
+      "maximum_occurrences_of_one_title": 1,
+      "manifest_expected_rows": 47392,
+      "row_count_match": true,
+      "duplicate_policy": "Exact case-sensitive equality of title_nfc using SQLite BINARY collation",
+      "status": "PASS",
+      "processing_seconds": 0.463
+    },
+    {
+      "corpus_id": "english",
+      "language": "English",
+      "source_file": "english_titles.csv",
+      "total_records": 19264252,
+      "unique_nfc_titles": 19264252,
+      "duplicate_occurrences": 0,
+      "distinct_duplicate_titles": 0,
+      "maximum_occurrences_of_one_title": 1,
+      "manifest_expected_rows": 19264252,
+      "row_count_match": true,
+      "duplicate_policy": "Exact case-sensitive equality of title_nfc using SQLite BINARY collation",
+      "status": "PASS",
+      "processing_seconds": 130.407
+    }
+  ]
+}

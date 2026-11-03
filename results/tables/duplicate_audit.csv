@@ -1,0 +1,4 @@
+corpus_id,language,source_file,total_records,unique_nfc_titles,duplicate_occurrences,distinct_duplicate_titles,maximum_occurrences_of_one_title,manifest_expected_rows,row_count_match,duplicate_policy,status,processing_seconds
+tulu,Tulu,tulu_titles.csv,4536,4536,0,0,1,4536,True,Exact case-sensitive equality of title_nfc using SQLite BINARY collation,PASS,0.05
+kannada,Kannada,kannada_titles.csv,47392,47392,0,0,1,47392,True,Exact case-sensitive equality of title_nfc using SQLite BINARY collation,PASS,0.463
+english,English,english_titles.csv,19264252,19264252,0,0,1,19264252,True,Exact case-sensitive equality of title_nfc using SQLite BINARY collation,PASS,130.407
