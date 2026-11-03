@@ -1,0 +1,155 @@
+{
+  "project": {
+    "name": "Wikipedia Multilingual Title Corpus Benchmark",
+    "title": "Performance Evaluation of Exact-Search Data Structures for Multilingual Title Retrieval",
+    "version": "1.0.0",
+    "python_version_observed": "3.14.2",
+    "random_seed": 2026
+  },
+
+  "paths": {
+    "manifest": "data/metadata/manifest.json",
+    "audit_report_json": "results/tables/dataset_audit_report.json",
+    "audit_report_csv": "results/tables/dataset_audit_report.csv"
+  },
+
+  "source": {
+    "source_type": "Wikipedia all-titles-in-namespace-0 dumps",
+    "source_snapshot": "2026-09-01",
+    "encoding": "UTF-8"
+  },
+
+  "dataset_schema": {
+    "required_columns": [
+      "wiki_id",
+      "language",
+      "title_source",
+      "title_display",
+      "title_nfc",
+      "codepoint_length",
+      "utf8_bytes"
+    ],
+    "search_column": "title_nfc",
+    "title_length_reference_column": "title_source"
+  },
+
+  "datasets": {
+    "tulu": {
+      "filename": "tulu_titles.csv",
+      "relative_path": "data/raw/tulu_titles.csv",
+      "language": "Tulu",
+      "wiki_id": "tcywiki",
+      "candidate_corpus_sizes": [
+        1000,
+        2500,
+        4000,
+        4536
+      ]
+    },
+
+    "kannada": {
+      "filename": "kannada_titles.csv",
+      "relative_path": "data/raw/kannada_titles.csv",
+      "language": "Kannada",
+      "wiki_id": "knwiki",
+      "candidate_corpus_sizes": [
+        1000,
+        5000,
+        10000,
+        25000,
+        47392
+      ]
+    },
+
+    "english": {
+      "filename": "english_titles.csv",
+      "relative_path": "data/raw/english_titles.csv",
+      "language": "English",
+      "wiki_id": "enwiki",
+      "candidate_corpus_sizes": [
+        1000,
+        5000,
+        10000,
+        50000,
+        100000,
+        500000,
+        1000000,
+        5000000,
+        10000000,
+        19264252
+      ]
+    }
+  },
+
+  "text_policy": {
+    "unicode_normalization": "NFC",
+    "comparison": "exact_string_equality_after_NFC",
+    "case_sensitive": true,
+    "preserve_whitespace": true,
+    "preserve_punctuation": true,
+    "preserve_underscores": true,
+    "remove_diacritics": false,
+    "transliteration": false
+  },
+
+  "duplicate_policy": {
+    "preserve_source_records": true,
+    "silently_deduplicate": false,
+    "report_duplicates": true,
+    "duplicate_identity_field": "title_nfc"
+  },
+
+  "sampling": {
+    "method": "random_sampling_without_replacement",
+    "seed": 2026,
+    "nested_subsets": true,
+    "ignore_sizes_greater_than_verified_record_count": true
+  },
+
+  "query_workloads": {
+    "query_counts": [
+      100,
+      1000,
+      10000,
+      100000
+    ],
+    "successful_queries": true,
+    "unsuccessful_queries": true,
+    "mixed_queries": true,
+    "mixed_success_ratio": 0.5,
+    "repeated_query_patterns": [
+      "same_query_set",
+      "mostly_unique",
+      "mixed"
+    ],
+    "seed": 2026
+  },
+
+  "benchmark": {
+    "trials": 10,
+    "warmup_runs": 2,
+    "timer": "time.perf_counter_ns",
+    "primary_timing_method": "batch_timing",
+    "individual_query_timing": "separate_optional_experiment",
+    "measure_sorting_separately": true,
+    "measure_hash_construction_separately": true,
+    "stop_on_correctness_failure": true
+  },
+
+  "memory_measurement": {
+    "python_allocations": "tracemalloc",
+    "process_memory": "psutil",
+    "measure_baseline": true,
+    "measure_retained_additional_memory": true,
+    "measure_peak_additional_memory": true
+  },
+
+  "data_verification_notes": [
+    "The supplied manifest reports 4536 Tulu records.",
+    "The supplied manifest reports 47392 Kannada records.",
+    "The supplied manifest reports 19264252 English records.",
+    "An English record count of 1048576 was separately reported and must be reconciled using a streaming CSV audit.",
+    "Never modify source data to force a manifest match.",
+    "Do not execute corpus sampling until dataset verification succeeds."
+  ]
+}

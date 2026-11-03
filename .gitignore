@@ -218,3 +218,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Wikipedia datasets and generated workloads
+data/raw/
+data/processed/
+data/workloads/
+
+# Large raw experiment outputs
+results/raw/
+.venv/
