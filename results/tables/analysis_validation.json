@@ -1,0 +1,45 @@
+{
+  "analysis_status": "PASS",
+  "campaign_prefix": "main_campaign_20261104_",
+  "memory_prefix": "main_memory_20261104_",
+  "benchmark_configurations": 29,
+  "memory_configurations": 16,
+  "source_row_counts": {
+    "benchmark summaries": 783,
+    "preprocessing summaries": 87,
+    "memory summaries": 48,
+    "benchmark raw trials": 7830,
+    "preprocessing raw trials": 609,
+    "memory raw trials": 480
+  },
+  "consolidated_table_rows": {
+    "consolidated_benchmark_summary.csv": 783,
+    "consolidated_preprocessing_summary.csv": 87,
+    "consolidated_memory_summary.csv": 48,
+    "consolidated_benchmark_trials.csv": 7830,
+    "consolidated_preprocessing_trials.csv": 609,
+    "consolidated_memory_trials.csv": 480,
+    "benchmark_trial_statistics.csv": 783,
+    "algorithm_speedup_comparison.csv": 261,
+    "preprocessing_cost_by_corpus.csv": 48,
+    "preprocessing_break_even_estimates.csv": 522,
+    "performance_by_language_workload.csv": 81,
+    "memory_growth_summary.csv": 48
+  },
+  "bootstrap_replicates": 2000,
+  "random_seed": 2026,
+  "figures": [
+    "latency_scaling_100_query_mixed.png",
+    "workload_and_repetition_comparison.png",
+    "preprocessing_cost_scaling.png",
+    "memory_retained_scaling.png",
+    "memory_peak_scaling.png"
+  ],
+  "interpretation_notes": [
+    "Bootstrap intervals describe uncertainty in the observed trial median; they are not, by themselves, proof of statistical significance.",
+    "Break-even query counts are estimates based on measured median preprocessing and per-query latency.",
+    "Memory measurements describe additional index construction allocation after the corpus has been loaded, not total process memory.",
+    "Linear Search is the no-index baseline.",
+    "Corpus scaling graph uses the common 100-query mixed workload and mixed repetition pattern."
+  ]
+}
