@@ -1,0 +1,4 @@
+algorithm,operation,corpus_size,trials,median_ns,mean_ns,stdev_ns,status
+Linear Search,none,4536,0,0,0,0,NOT_REQUIRED
+Binary Search,sort_titles,4536,10,981033,983403.4,25260.03,PASS
+Hash-Table Search,build_hash_index,4536,10,102140,112483.1,26766.16,PASS

@@ -1,0 +1,37 @@
+{
+  "experiment": "Exact-search performance benchmark",
+  "run_tag": "main_campaign_20261104_kannada_n1000_q100",
+  "language": "Kannada",
+  "corpus_size": 1000,
+  "query_count": 100,
+  "workload_types": [
+    "successful",
+    "unsuccessful",
+    "mixed"
+  ],
+  "repetition_patterns": [
+    "same_query_set",
+    "mostly_unique",
+    "mixed"
+  ],
+  "algorithms": [
+    "Linear Search",
+    "Binary Search",
+    "Hash-Table Search"
+  ],
+  "trials": 10,
+  "warmups": 2,
+  "timer": "time.perf_counter_ns",
+  "python_version": "3.14.2 (main, Oct 28 2026, 19:03:49) [GCC 13.3.0]",
+  "platform": "Linux-6.8.0-1064-azure-x86_64-with-glibc2.39",
+  "cpu_count_logical": 4,
+  "cpu_count_physical": 2,
+  "current_process_rss_bytes": 49717248,
+  "total_trial_rows": 270,
+  "total_summary_rows": 27,
+  "correctness_verified_before_timing": true,
+  "raw_output_directory": "/workspaces/multilingual-search-benchmark/results/raw/benchmark_runs/main_campaign_20261104_kannada_n1000_q100",
+  "summary_file": "/workspaces/multilingual-search-benchmark/results/tables/benchmark_runs/main_campaign_20261104_kannada_n1000_q100_summary.csv",
+  "preprocessing_summary_file": "/workspaces/multilingual-search-benchmark/results/tables/benchmark_runs/main_campaign_20261104_kannada_n1000_q100_preprocessing.csv",
+  "status": "PASS"
+}

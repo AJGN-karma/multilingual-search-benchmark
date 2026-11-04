@@ -1,0 +1,209 @@
+{
+  "experiment": "Performance Evaluation of Exact-Search Data Structures for Multilingual Title Retrieval",
+  "campaign_tag": "main_campaign_20261104",
+  "created_at_utc": "2026-11-04T07:33:48Z",
+  "planned_configurations": 29,
+  "selected_configurations": 29,
+  "workload_types": [
+    "successful",
+    "unsuccessful",
+    "mixed"
+  ],
+  "repetition_patterns": [
+    "same_query_set",
+    "mostly_unique",
+    "mixed"
+  ],
+  "algorithms": [
+    "Linear Search",
+    "Binary Search",
+    "Hash-Table Search"
+  ],
+  "trials": 10,
+  "warmup_runs": 2,
+  "schedule": [
+    {
+      "language": "Tulu",
+      "sample_size": 1000,
+      "query_count": 100,
+      "corpus_id": "tulu"
+    },
+    {
+      "language": "Tulu",
+      "sample_size": 1000,
+      "query_count": 1000,
+      "corpus_id": "tulu"
+    },
+    {
+      "language": "Tulu",
+      "sample_size": 1000,
+      "query_count": 10000,
+      "corpus_id": "tulu"
+    },
+    {
+      "language": "Tulu",
+      "sample_size": 2500,
+      "query_count": 100,
+      "corpus_id": "tulu"
+    },
+    {
+      "language": "Tulu",
+      "sample_size": 2500,
+      "query_count": 1000,
+      "corpus_id": "tulu"
+    },
+    {
+      "language": "Tulu",
+      "sample_size": 4000,
+      "query_count": 100,
+      "corpus_id": "tulu"
+    },
+    {
+      "language": "Tulu",
+      "sample_size": 4000,
+      "query_count": 1000,
+      "corpus_id": "tulu"
+    },
+    {
+      "language": "Tulu",
+      "sample_size": 4536,
+      "query_count": 100,
+      "corpus_id": "tulu"
+    },
+    {
+      "language": "Tulu",
+      "sample_size": 4536,
+      "query_count": 1000,
+      "corpus_id": "tulu"
+    },
+    {
+      "language": "Kannada",
+      "sample_size": 1000,
+      "query_count": 100,
+      "corpus_id": "kannada"
+    },
+    {
+      "language": "Kannada",
+      "sample_size": 1000,
+      "query_count": 1000,
+      "corpus_id": "kannada"
+    },
+    {
+      "language": "Kannada",
+      "sample_size": 1000,
+      "query_count": 10000,
+      "corpus_id": "kannada"
+    },
+    {
+      "language": "Kannada",
+      "sample_size": 5000,
+      "query_count": 100,
+      "corpus_id": "kannada"
+    },
+    {
+      "language": "Kannada",
+      "sample_size": 5000,
+      "query_count": 1000,
+      "corpus_id": "kannada"
+    },
+    {
+      "language": "Kannada",
+      "sample_size": 10000,
+      "query_count": 100,
+      "corpus_id": "kannada"
+    },
+    {
+      "language": "Kannada",
+      "sample_size": 10000,
+      "query_count": 1000,
+      "corpus_id": "kannada"
+    },
+    {
+      "language": "Kannada",
+      "sample_size": 25000,
+      "query_count": 100,
+      "corpus_id": "kannada"
+    },
+    {
+      "language": "Kannada",
+      "sample_size": 47392,
+      "query_count": 100,
+      "corpus_id": "kannada"
+    },
+    {
+      "language": "English",
+      "sample_size": 1000,
+      "query_count": 100,
+      "corpus_id": "english"
+    },
+    {
+      "language": "English",
+      "sample_size": 1000,
+      "query_count": 1000,
+      "corpus_id": "english"
+    },
+    {
+      "language": "English",
+      "sample_size": 1000,
+      "query_count": 10000,
+      "corpus_id": "english"
+    },
+    {
+      "language": "English",
+      "sample_size": 5000,
+      "query_count": 100,
+      "corpus_id": "english"
+    },
+    {
+      "language": "English",
+      "sample_size": 5000,
+      "query_count": 1000,
+      "corpus_id": "english"
+    },
+    {
+      "language": "English",
+      "sample_size": 10000,
+      "query_count": 100,
+      "corpus_id": "english"
+    },
+    {
+      "language": "English",
+      "sample_size": 10000,
+      "query_count": 1000,
+      "corpus_id": "english"
+    },
+    {
+      "language": "English",
+      "sample_size": 50000,
+      "query_count": 100,
+      "corpus_id": "english"
+    },
+    {
+      "language": "English",
+      "sample_size": 100000,
+      "query_count": 100,
+      "corpus_id": "english"
+    },
+    {
+      "language": "English",
+      "sample_size": 500000,
+      "query_count": 100,
+      "corpus_id": "english"
+    },
+    {
+      "language": "English",
+      "sample_size": 1000000,
+      "query_count": 100,
+      "corpus_id": "english"
+    }
+  ],
+  "status": "COMPLETED",
+  "updated_at_utc": "2026-11-04T07:40:07Z",
+  "counts": {
+    "passed": 29,
+    "failed": 0,
+    "running": 0,
+    "interrupted": 0,
+    "pending": 0
+  }
+}
