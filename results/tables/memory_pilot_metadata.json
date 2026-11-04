@@ -1,0 +1,24 @@
+{
+  "experiment": "Isolated search-index memory pilot",
+  "language": "Tulu",
+  "sample_size": 1000,
+  "trials_per_algorithm": 10,
+  "algorithms": [
+    "Linear Search",
+    "Binary Search",
+    "Hash-Table Search"
+  ],
+  "memory_tools": [
+    "tracemalloc",
+    "psutil"
+  ],
+  "process_isolation": "Fresh subprocess for each algorithm trial",
+  "corpus_loaded_before_memory_baseline": true,
+  "measures": [
+    "baseline_process_rss",
+    "retained_additional_python_memory",
+    "peak_additional_python_memory",
+    "process_rss_delta"
+  ],
+  "status": "PASS"
+}
