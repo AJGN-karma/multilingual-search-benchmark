@@ -1,0 +1,41 @@
+{
+  "experiment": "Performance Evaluation of Exact-Search Data Structures for Multilingual Title Retrieval",
+  "campaign_tag": "campaign_smoke_run1_20261104",
+  "created_at_utc": "2026-11-04T07:29:46Z",
+  "planned_configurations": 29,
+  "selected_configurations": 1,
+  "workload_types": [
+    "successful",
+    "unsuccessful",
+    "mixed"
+  ],
+  "repetition_patterns": [
+    "same_query_set",
+    "mostly_unique",
+    "mixed"
+  ],
+  "algorithms": [
+    "Linear Search",
+    "Binary Search",
+    "Hash-Table Search"
+  ],
+  "trials": 10,
+  "warmup_runs": 2,
+  "schedule": [
+    {
+      "language": "Tulu",
+      "sample_size": 1000,
+      "query_count": 100,
+      "corpus_id": "tulu"
+    }
+  ],
+  "status": "PARTIAL",
+  "updated_at_utc": "2026-11-04T07:29:47Z",
+  "counts": {
+    "passed": 1,
+    "failed": 0,
+    "running": 0,
+    "interrupted": 0,
+    "pending": 0
+  }
+}

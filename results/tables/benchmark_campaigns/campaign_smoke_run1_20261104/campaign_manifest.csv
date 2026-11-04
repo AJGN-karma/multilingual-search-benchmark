@@ -1,0 +1,2 @@
+sequence,run_tag,language,sample_size,query_count,status,return_code,started_at_utc,completed_at_utc,elapsed_seconds,summary_path,raw_trials_path,metadata_path,error
+1,campaign_smoke_run1_20261104_tulu_n1000_q100,Tulu,1000,100,PASS,0,2026-11-04T07:29:46Z,2026-11-04T07:29:47Z,0.662,results/tables/benchmark_runs/campaign_smoke_run1_20261104_tulu_n1000_q100_summary.csv,results/raw/benchmark_runs/campaign_smoke_run1_20261104_tulu_n1000_q100/benchmark_trials.csv,results/tables/benchmark_runs/campaign_smoke_run1_20261104_tulu_n1000_q100_metadata.json,
