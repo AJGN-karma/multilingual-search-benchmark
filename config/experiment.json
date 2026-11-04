@@ -1,3 +1,4 @@
+
 {
   "project": {
     "name": "Wikipedia Multilingual Title Corpus Benchmark",
@@ -122,6 +123,51 @@
     "seed": 2026
   },
 
+  "main_benchmark_schedule": {
+    "description": "Resource-aware main experiment schedule",
+    "sample_size_query_policy": [
+      {
+        "minimum_sample_size": 1,
+        "maximum_sample_size": 1000,
+        "query_counts": [
+          100,
+          1000,
+          10000
+        ]
+      },
+      {
+        "minimum_sample_size": 1001,
+        "maximum_sample_size": 10000,
+        "query_counts": [
+          100,
+          1000
+        ]
+      },
+      {
+        "minimum_sample_size": 10001,
+        "maximum_sample_size": 1000000,
+        "query_counts": [
+          100
+        ]
+      }
+    ],
+    "workload_types": [
+      "successful",
+      "unsuccessful",
+      "mixed"
+    ],
+    "repetition_patterns": [
+      "same_query_set",
+      "mostly_unique",
+      "mixed"
+    ],
+    "trials": 10,
+    "warmup_runs": 2,
+    "total_corpus_query_combinations": 29,
+    "total_measured_query_batches": 7830,
+    "total_warmup_query_batches": 1566
+  },
+
   "benchmark": {
     "trials": 10,
     "warmup_runs": 2,
@@ -142,11 +188,13 @@
   },
 
   "data_verification_notes": [
-    "The supplied manifest reports 4536 Tulu records.",
-    "The supplied manifest reports 47392 Kannada records.",
-    "The supplied manifest reports 19264252 English records.",
-    "An English record count of 1048576 was separately reported and must be reconciled using a streaming CSV audit.",
-    "Never modify source data to force a manifest match.",
-    "Do not execute corpus sampling until dataset verification succeeds."
+    "The verified Tulu source contains 4536 records.",
+    "The verified Kannada source contains 47392 records.",
+    "The verified English source contains 19264252 records.",
+    "The English benchmark sample sizes are capped at 1000000 titles.",
+    "The previously reported English figure of 1048576 is not used as the source corpus record count.",
+    "All source datasets remain unchanged.",
+    "Duplicate title_nfc values were checked during source validation.",
+    "All benchmark searches use the NFC-normalized title_nfc field."
   ]
 }

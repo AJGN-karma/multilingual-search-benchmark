@@ -3,6 +3,7 @@ import argparse
 import csv
 import gc
 import json
+import re
 import statistics
 import subprocess
 import sys
@@ -26,28 +27,19 @@ SAMPLE_MANIFEST = (
     / "corpus_sample_manifest.csv"
 )
 
-RAW_OUTPUT = (
+RAW_OUTPUT_ROOT = (
     PROJECT_ROOT
     / "results"
     / "raw"
-    / "memory_pilot"
-    / "memory_trials.csv"
+    / "memory_runs"
 )
 
-SUMMARY_OUTPUT = (
+TABLE_OUTPUT_ROOT = (
     PROJECT_ROOT
     / "results"
     / "tables"
-    / "memory_pilot_summary.csv"
+    / "memory_runs"
 )
-
-METADATA_OUTPUT = (
-    PROJECT_ROOT
-    / "results"
-    / "tables"
-    / "memory_pilot_metadata.json"
-)
-
 
 ALGORITHMS = [
     "Linear Search",
@@ -59,12 +51,75 @@ ALGORITHMS = [
 def read_manifest():
     """Read the validated corpus sample manifest."""
 
+    if not SAMPLE_MANIFEST.exists():
+        raise FileNotFoundError(
+            f"Sample manifest not found: {SAMPLE_MANIFEST}"
+        )
+
     with SAMPLE_MANIFEST.open(
         "r",
         encoding="utf-8",
         newline="",
     ) as file:
         return list(csv.DictReader(file))
+
+
+def validate_run_tag(run_tag):
+    """Reject unsafe run tags and path traversal."""
+
+    if not re.fullmatch(
+        r"[A-Za-z0-9][A-Za-z0-9_-]{0,79}",
+        run_tag,
+    ):
+        raise ValueError(
+            "Run tag must start with a letter or number and "
+            "contain only letters, numbers, underscores, "
+            "and hyphens. Maximum length: 80 characters."
+        )
+
+
+def get_output_paths(run_tag):
+    """Build unique output paths for one memory run."""
+
+    raw_directory = RAW_OUTPUT_ROOT / run_tag
+
+    raw_output = (
+        raw_directory
+        / "memory_trials.csv"
+    )
+
+    summary_output = (
+        TABLE_OUTPUT_ROOT
+        / f"{run_tag}_summary.csv"
+    )
+
+    metadata_output = (
+        TABLE_OUTPUT_ROOT
+        / f"{run_tag}_metadata.json"
+    )
+
+    return {
+        "raw": raw_output,
+        "summary": summary_output,
+        "metadata": metadata_output,
+    }
+
+
+def check_output_paths(output_paths):
+    """Prevent accidental overwriting of an earlier run."""
+
+    existing = [
+        str(path)
+        for path in output_paths.values()
+        if path.exists()
+    ]
+
+    if existing:
+        raise FileExistsError(
+            "One or more output files already exist. "
+            "Choose a new --run-tag.\n"
+            + "\n".join(existing)
+        )
 
 
 def build_index(algorithm, titles):
@@ -88,6 +143,7 @@ def verify_index(algorithm, index, expected_count):
     """Verify the constructed index without copying it."""
 
     if algorithm == "Linear Search":
+
         if index is not None:
             raise RuntimeError(
                 "Linear Search should not construct an index."
@@ -131,7 +187,7 @@ def run_worker(args):
     Perform one isolated memory measurement.
 
     The corpus is loaded before tracing starts. Therefore,
-    the measurements focus on additional index allocations.
+    measurements focus on additional index allocations.
     """
 
     titles = load_corpus(
@@ -214,7 +270,6 @@ def run_worker(args):
         "status": "PASS",
     }
 
-    # Stop tracing before returning from the worker.
     tracemalloc.stop()
 
     # Output exactly one JSON object for the parent process.
@@ -228,6 +283,8 @@ def run_isolated_measurement(
 ):
     """Execute one algorithm measurement in a fresh process."""
 
+    sample_path = PROJECT_ROOT / sample["sample_file"]
+
     command = [
         sys.executable,
         "-m",
@@ -236,7 +293,7 @@ def run_isolated_measurement(
         "--algorithm",
         algorithm,
         "--sample-file",
-        str(PROJECT_ROOT / sample["sample_file"]),
+        str(sample_path),
         "--sample-size",
         str(sample["sample_size"]),
         "--sample-sha256",
@@ -260,6 +317,7 @@ def run_isolated_measurement(
 
     try:
         result = json.loads(completed.stdout.strip())
+
     except json.JSONDecodeError as error:
         raise RuntimeError(
             f"Invalid worker output for {algorithm}, trial {trial}:\n"
@@ -315,9 +373,7 @@ def summarize_memory(rows):
             ]
 
             median_value = statistics.median(values)
-
             mean_value = statistics.mean(values)
-
             stdev_value = statistics.stdev(values)
 
             summary[f"median_{metric}"] = round(
@@ -370,6 +426,11 @@ def summarize_memory(rows):
 def write_csv(path, rows):
     """Save the measurement table."""
 
+    if not rows:
+        raise ValueError(
+            f"Cannot write an empty CSV report: {path}"
+        )
+
     path.parent.mkdir(
         parents=True,
         exist_ok=True,
@@ -394,7 +455,9 @@ def write_csv(path, rows):
 def main():
 
     parser = argparse.ArgumentParser(
-        description="Isolated memory measurement for search indexes."
+        description=(
+            "Isolated memory measurement for exact-search indexes."
+        )
     )
 
     parser.add_argument(
@@ -432,9 +495,16 @@ def main():
         default=10,
     )
 
+    parser.add_argument(
+        "--run-tag",
+        default="memory_run",
+        help="Unique identifier for this memory measurement run.",
+    )
+
     args = parser.parse_args()
 
     # Internal worker mode.
+    # The worker does not write reports, so it needs no run tag.
     if args.worker:
 
         required = [
@@ -449,6 +519,11 @@ def main():
                 "Worker mode requires algorithm and sample arguments."
             )
 
+        if args.sample_size < 1:
+            parser.error(
+                "Worker sample size must be positive."
+            )
+
         run_worker(args)
         return
 
@@ -457,7 +532,27 @@ def main():
             "At least two trials are required."
         )
 
-    # Locate exactly the requested 1,000-title or other sample.
+    if args.sample_size is None or args.sample_size < 1:
+        parser.error(
+            "A positive --sample-size is required."
+        )
+
+    # Validate the run tag before building output paths.
+    try:
+        validate_run_tag(args.run_tag)
+
+    except ValueError as error:
+        parser.error(str(error))
+
+    output_paths = get_output_paths(args.run_tag)
+
+    try:
+        check_output_paths(output_paths)
+
+    except FileExistsError as error:
+        parser.error(str(error))
+
+    # Locate exactly the requested corpus sample.
     samples = read_manifest()
 
     matching = [
@@ -475,13 +570,14 @@ def main():
 
     if sample["status"] != "PASS":
         parser.error(
-            "Requested source sample has not passed validation."
+            "Requested corpus sample has not passed validation."
         )
 
     print("=" * 70)
     print("ISOLATED INDEX MEMORY MEASUREMENT")
     print("=" * 70)
 
+    print("Run tag:", args.run_tag)
     print("Language:", args.language)
     print("Corpus size:", f"{args.sample_size:,}")
     print("Trials per algorithm:", args.trials)
@@ -525,23 +621,42 @@ def main():
                 f"{to_mib(result['traced_peak_additional_bytes']):.4f} MiB"
             )
 
+    # Verify the expected number of trial records.
+    expected_records = len(ALGORITHMS) * args.trials
+
+    if len(all_rows) != expected_records:
+        raise RuntimeError(
+            f"Expected {expected_records} measurements, "
+            f"but recorded {len(all_rows)}."
+        )
+
     summary_rows = summarize_memory(all_rows)
 
+    if len(summary_rows) != len(ALGORITHMS):
+        raise RuntimeError(
+            "Memory summary does not contain all algorithms."
+        )
+
+    # Write reports only after all measurements have succeeded.
     write_csv(
-        RAW_OUTPUT,
+        output_paths["raw"],
         all_rows,
     )
 
     write_csv(
-        SUMMARY_OUTPUT,
+        output_paths["summary"],
         summary_rows,
     )
 
     metadata = {
-        "experiment": "Isolated search-index memory pilot",
+        "experiment": "Isolated search-index memory measurement",
+        "run_tag": args.run_tag,
         "language": args.language,
         "sample_size": args.sample_size,
+        "sample_file": sample["sample_file"],
+        "sample_sha256": sample["sample_sha256"],
         "trials_per_algorithm": args.trials,
+        "total_measurements": len(all_rows),
         "algorithms": ALGORITHMS,
         "memory_tools": [
             "tracemalloc",
@@ -557,15 +672,32 @@ def main():
             "peak_additional_python_memory",
             "process_rss_delta",
         ],
+        "interpretation_notes": [
+            "RSS delta measures process-level memory change.",
+            "tracemalloc measures traced Python memory allocations.",
+            "RSS and tracemalloc measure different aspects of memory.",
+            "A zero RSS delta does not imply zero additional memory use."
+        ],
+        "output_files": {
+            "raw_trials": str(
+                output_paths["raw"].relative_to(PROJECT_ROOT)
+            ),
+            "summary": str(
+                output_paths["summary"].relative_to(PROJECT_ROOT)
+            ),
+            "metadata": str(
+                output_paths["metadata"].relative_to(PROJECT_ROOT)
+            ),
+        },
         "status": "PASS",
     }
 
-    METADATA_OUTPUT.parent.mkdir(
+    output_paths["metadata"].parent.mkdir(
         parents=True,
         exist_ok=True,
     )
 
-    with METADATA_OUTPUT.open(
+    with output_paths["metadata"].open(
         "w",
         encoding="utf-8",
     ) as file:
@@ -605,9 +737,9 @@ def main():
             "MiB",
         )
 
-    print("\nRaw report:", RAW_OUTPUT)
-    print("Summary:", SUMMARY_OUTPUT)
-    print("Metadata:", METADATA_OUTPUT)
+    print("\nRaw report:", output_paths["raw"])
+    print("Summary:", output_paths["summary"])
+    print("Metadata:", output_paths["metadata"])
 
     print("\nALL MEMORY MEASUREMENT CHECKS PASSED")
 
