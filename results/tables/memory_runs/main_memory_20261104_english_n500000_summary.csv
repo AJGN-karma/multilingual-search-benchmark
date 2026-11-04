@@ -1,0 +1,4 @@
+algorithm,operation,sample_size,trials,median_rss_delta_bytes,mean_rss_delta_bytes,stdev_rss_delta_bytes,median_traced_retained_additional_bytes,mean_traced_retained_additional_bytes,stdev_traced_retained_additional_bytes,median_traced_peak_additional_bytes,mean_traced_peak_additional_bytes,stdev_traced_peak_additional_bytes,median_rss_delta_mib,median_traced_retained_mib,median_traced_peak_mib,status
+Linear Search,no_index_baseline,500000,10,0.0,0,0.0,1184.0,1184,0.0,35248.0,35248,0.0,0.0,0.0011,0.0336,PASS
+Binary Search,sorted_array_construction,500000,10,5021696.0,5021696,0.0,4001256.0,4001256,0.0,6001120.0,6001120,0.0,4.7891,3.8159,5.7231,PASS
+Hash-Table Search,hash_index_construction,500000,10,16834560.0,16834560,0.0,16778616.0,16778616,0.0,25167224.0,25167224,0.0,16.0547,16.0013,24.0013,PASS

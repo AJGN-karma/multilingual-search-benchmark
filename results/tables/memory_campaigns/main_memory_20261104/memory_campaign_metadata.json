@@ -1,0 +1,141 @@
+{
+  "experiment": "Comparative Memory Evaluation of Exact-Search Data Structures for Multilingual Title Retrieval",
+  "campaign_tag": "main_memory_20261104",
+  "created_at_utc": "2026-11-04T07:48:53Z",
+  "planned_samples": 16,
+  "selected_samples": 16,
+  "algorithms": [
+    "Linear Search",
+    "Binary Search",
+    "Hash-Table Search"
+  ],
+  "trials_per_algorithm": 10,
+  "expected_measurements": 480,
+  "measurement_tools": [
+    "tracemalloc",
+    "psutil"
+  ],
+  "process_isolation": "Fresh subprocess for every algorithm trial",
+  "schedule": [
+    {
+      "language": "Tulu",
+      "sample_size": 1000,
+      "sample_file": "data/processed/tulu/tulu_n1000_seed2026.csv",
+      "sample_sha256": "5a6f6e51ab8fce311a22bdb1df2a27a8697f86d9314ad7d4390091ae27b36d35",
+      "corpus_id": "tulu"
+    },
+    {
+      "language": "Tulu",
+      "sample_size": 2500,
+      "sample_file": "data/processed/tulu/tulu_n2500_seed2026.csv",
+      "sample_sha256": "8a6257c75435329273052baaed605eb812f9343917f451027c28175b763e7222",
+      "corpus_id": "tulu"
+    },
+    {
+      "language": "Tulu",
+      "sample_size": 4000,
+      "sample_file": "data/processed/tulu/tulu_n4000_seed2026.csv",
+      "sample_sha256": "29cbc3bde99cbe6c983aa70527c7e6616009ce168831735fb586e882ef7ffc3f",
+      "corpus_id": "tulu"
+    },
+    {
+      "language": "Tulu",
+      "sample_size": 4536,
+      "sample_file": "data/processed/tulu/tulu_n4536_seed2026.csv",
+      "sample_sha256": "171791d9d6516cef59084de30b1ce46c462c737eb6c4e3b517c7251d62df74b7",
+      "corpus_id": "tulu"
+    },
+    {
+      "language": "Kannada",
+      "sample_size": 1000,
+      "sample_file": "data/processed/kannada/kannada_n1000_seed2026.csv",
+      "sample_sha256": "63e7b8f999ab052cb910a2128af3815824351b1f3ae444e22a3d35d79cc2183d",
+      "corpus_id": "kannada"
+    },
+    {
+      "language": "Kannada",
+      "sample_size": 5000,
+      "sample_file": "data/processed/kannada/kannada_n5000_seed2026.csv",
+      "sample_sha256": "776b01ed3d3508543c545760cb1232f5339e8b299fca113bbe9a66e9313a067e",
+      "corpus_id": "kannada"
+    },
+    {
+      "language": "Kannada",
+      "sample_size": 10000,
+      "sample_file": "data/processed/kannada/kannada_n10000_seed2026.csv",
+      "sample_sha256": "269810ab744507a15564e15f16a661ecccb124837ce6c42b2b0d0a1832cf13a6",
+      "corpus_id": "kannada"
+    },
+    {
+      "language": "Kannada",
+      "sample_size": 25000,
+      "sample_file": "data/processed/kannada/kannada_n25000_seed2026.csv",
+      "sample_sha256": "a0c19ef59e345645f9b65ed1a3b11da3f4edbe51e790bd2e8cb4c0909cb5293d",
+      "corpus_id": "kannada"
+    },
+    {
+      "language": "Kannada",
+      "sample_size": 47392,
+      "sample_file": "data/processed/kannada/kannada_n47392_seed2026.csv",
+      "sample_sha256": "1bdf2a69726d70a0e45b5e1b7b5df5b3d1f0767adaaab97cbf6afe12bafedbdf",
+      "corpus_id": "kannada"
+    },
+    {
+      "language": "English",
+      "sample_size": 1000,
+      "sample_file": "data/processed/english/english_n1000_seed2026.csv",
+      "sample_sha256": "7bcf61c8a85c8cbbaeead98dd5799a667db9528acc9015e2b84a9c86104bef7d",
+      "corpus_id": "english"
+    },
+    {
+      "language": "English",
+      "sample_size": 5000,
+      "sample_file": "data/processed/english/english_n5000_seed2026.csv",
+      "sample_sha256": "79aed5e8f4277176e5ec633d2318fd94db37cf7a5e9c1e3db1ea921ea95c6d88",
+      "corpus_id": "english"
+    },
+    {
+      "language": "English",
+      "sample_size": 10000,
+      "sample_file": "data/processed/english/english_n10000_seed2026.csv",
+      "sample_sha256": "665fa44584a3b7f7151863c77f04e57ffe69507c1cbd88d00efccdf77ef97a1b",
+      "corpus_id": "english"
+    },
+    {
+      "language": "English",
+      "sample_size": 50000,
+      "sample_file": "data/processed/english/english_n50000_seed2026.csv",
+      "sample_sha256": "086059344887278cdbb77e7023b579a5747c8dc65e21b633fe16faaba24ecc0c",
+      "corpus_id": "english"
+    },
+    {
+      "language": "English",
+      "sample_size": 100000,
+      "sample_file": "data/processed/english/english_n100000_seed2026.csv",
+      "sample_sha256": "21cee3402095f166d1da812f4142f63975aa2a0c3913ff690dd7f7e24b3de843",
+      "corpus_id": "english"
+    },
+    {
+      "language": "English",
+      "sample_size": 500000,
+      "sample_file": "data/processed/english/english_n500000_seed2026.csv",
+      "sample_sha256": "8637cb64ecd00843658f7c94afe72f067d3e63c655463a8a6959eba20c978387",
+      "corpus_id": "english"
+    },
+    {
+      "language": "English",
+      "sample_size": 1000000,
+      "sample_file": "data/processed/english/english_n1000000_seed2026.csv",
+      "sample_sha256": "c67858677bf0ee0d0c21d81e9bf42aeb4c5aea28bda77a8baa2b95c2dc344765",
+      "corpus_id": "english"
+    }
+  ],
+  "status": "COMPLETED",
+  "updated_at_utc": "2026-11-04T07:50:37Z",
+  "counts": {
+    "passed": 16,
+    "failed": 0,
+    "interrupted": 0,
+    "pending": 0
+  }
+}

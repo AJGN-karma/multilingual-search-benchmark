@@ -1,0 +1,39 @@
+{
+  "experiment": "Isolated search-index memory measurement",
+  "run_tag": "main_memory_20261104_tulu_n4536",
+  "language": "Tulu",
+  "sample_size": 4536,
+  "sample_file": "data/processed/tulu/tulu_n4536_seed2026.csv",
+  "sample_sha256": "171791d9d6516cef59084de30b1ce46c462c737eb6c4e3b517c7251d62df74b7",
+  "trials_per_algorithm": 10,
+  "total_measurements": 30,
+  "algorithms": [
+    "Linear Search",
+    "Binary Search",
+    "Hash-Table Search"
+  ],
+  "memory_tools": [
+    "tracemalloc",
+    "psutil"
+  ],
+  "process_isolation": "Fresh subprocess for each algorithm trial",
+  "corpus_loaded_before_memory_baseline": true,
+  "measures": [
+    "baseline_process_rss",
+    "retained_additional_python_memory",
+    "peak_additional_python_memory",
+    "process_rss_delta"
+  ],
+  "interpretation_notes": [
+    "RSS delta measures process-level memory change.",
+    "tracemalloc measures traced Python memory allocations.",
+    "RSS and tracemalloc measure different aspects of memory.",
+    "A zero RSS delta does not imply zero additional memory use."
+  ],
+  "output_files": {
+    "raw_trials": "results/raw/memory_runs/main_memory_20261104_tulu_n4536/memory_trials.csv",
+    "summary": "results/tables/memory_runs/main_memory_20261104_tulu_n4536_summary.csv",
+    "metadata": "results/tables/memory_runs/main_memory_20261104_tulu_n4536_metadata.json"
+  },
+  "status": "PASS"
+}

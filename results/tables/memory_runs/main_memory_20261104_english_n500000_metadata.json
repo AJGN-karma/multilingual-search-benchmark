@@ -1,0 +1,39 @@
+{
+  "experiment": "Isolated search-index memory measurement",
+  "run_tag": "main_memory_20261104_english_n500000",
+  "language": "English",
+  "sample_size": 500000,
+  "sample_file": "data/processed/english/english_n500000_seed2026.csv",
+  "sample_sha256": "8637cb64ecd00843658f7c94afe72f067d3e63c655463a8a6959eba20c978387",
+  "trials_per_algorithm": 10,
+  "total_measurements": 30,
+  "algorithms": [
+    "Linear Search",
+    "Binary Search",
+    "Hash-Table Search"
+  ],
+  "memory_tools": [
+    "tracemalloc",
+    "psutil"
+  ],
+  "process_isolation": "Fresh subprocess for each algorithm trial",
+  "corpus_loaded_before_memory_baseline": true,
+  "measures": [
+    "baseline_process_rss",
+    "retained_additional_python_memory",
+    "peak_additional_python_memory",
+    "process_rss_delta"
+  ],
+  "interpretation_notes": [
+    "RSS delta measures process-level memory change.",
+    "tracemalloc measures traced Python memory allocations.",
+    "RSS and tracemalloc measure different aspects of memory.",
+    "A zero RSS delta does not imply zero additional memory use."
+  ],
+  "output_files": {
+    "raw_trials": "results/raw/memory_runs/main_memory_20261104_english_n500000/memory_trials.csv",
+    "summary": "results/tables/memory_runs/main_memory_20261104_english_n500000_summary.csv",
+    "metadata": "results/tables/memory_runs/main_memory_20261104_english_n500000_metadata.json"
+  },
+  "status": "PASS"
+}

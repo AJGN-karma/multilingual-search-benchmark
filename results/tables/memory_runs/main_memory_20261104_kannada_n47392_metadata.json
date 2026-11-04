@@ -1,0 +1,39 @@
+{
+  "experiment": "Isolated search-index memory measurement",
+  "run_tag": "main_memory_20261104_kannada_n47392",
+  "language": "Kannada",
+  "sample_size": 47392,
+  "sample_file": "data/processed/kannada/kannada_n47392_seed2026.csv",
+  "sample_sha256": "1bdf2a69726d70a0e45b5e1b7b5df5b3d1f0767adaaab97cbf6afe12bafedbdf",
+  "trials_per_algorithm": 10,
+  "total_measurements": 30,
+  "algorithms": [
+    "Linear Search",
+    "Binary Search",
+    "Hash-Table Search"
+  ],
+  "memory_tools": [
+    "tracemalloc",
+    "psutil"
+  ],
+  "process_isolation": "Fresh subprocess for each algorithm trial",
+  "corpus_loaded_before_memory_baseline": true,
+  "measures": [
+    "baseline_process_rss",
+    "retained_additional_python_memory",
+    "peak_additional_python_memory",
+    "process_rss_delta"
+  ],
+  "interpretation_notes": [
+    "RSS delta measures process-level memory change.",
+    "tracemalloc measures traced Python memory allocations.",
+    "RSS and tracemalloc measure different aspects of memory.",
+    "A zero RSS delta does not imply zero additional memory use."
+  ],
+  "output_files": {
+    "raw_trials": "results/raw/memory_runs/main_memory_20261104_kannada_n47392/memory_trials.csv",
+    "summary": "results/tables/memory_runs/main_memory_20261104_kannada_n47392_summary.csv",
+    "metadata": "results/tables/memory_runs/main_memory_20261104_kannada_n47392_metadata.json"
+  },
+  "status": "PASS"
+}
