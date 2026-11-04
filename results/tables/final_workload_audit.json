@@ -1,0 +1,31 @@
+{
+  "audit_name": "Final Query Workload Audit",
+  "corpus_sample_count": 16,
+  "query_counts": [
+    100,
+    1000,
+    10000,
+    100000
+  ],
+  "workload_file_count": 192,
+  "workloads_by_type": {
+    "mixed": 64,
+    "successful": 64,
+    "unsuccessful": 64
+  },
+  "records_by_type": {
+    "mixed": 1777600,
+    "successful": 1777600,
+    "unsuccessful": 1777600
+  },
+  "total_query_records": 5332800,
+  "total_workload_file_bytes": 255440703,
+  "coverage_validation": "PASS",
+  "file_existence_validation": "PASS",
+  "sha256_validation": "PASS",
+  "csv_structure_validation": "PASS",
+  "record_count_validation": "PASS",
+  "result_distribution_validation": "PASS",
+  "unique_repeated_count_validation": "PASS",
+  "overall_status": "PASS"
+}
